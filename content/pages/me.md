@@ -1,0 +1,15 @@
+---
+title: About me
+slug: me
+template: page
+---
+Hi, I'm Alessio, web developer, from Bologna, where I graduated in computer science.
+At the moment I work mainly in the Javascript world, but I find interesting integrate my knowledge by learning also Backend, DevOps, Data enginering notions.
+
+The goal of this blog is to encourage me to learn and especially to share what I have learned.
+
+Today is January 15, 2020, I hope to publish at least 1 post per month.
+
+- [Resume](/resume)
+- [Contact](/contact)
+- [Articles](/blog)
