@@ -18,6 +18,7 @@ export default class Footer extends Component {
           </a>
         </div>
         <div>
+          <Link to="/credits">Credits</Link>
           <a href="https://github.com/alewin" title="Open-source on GitHub">
             <img
               src={github}
@@ -45,6 +46,7 @@ export default class Footer extends Component {
               alt="Gatsby"
             />
           </a>
+
         </div>
       </footer>
     )
