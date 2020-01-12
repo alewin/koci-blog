@@ -3,8 +3,8 @@ import { Link } from 'gatsby'
 import floppy from '../images/floppy.png'
 import sun from '../images/sun.svg'
 import moon from '../images/moon.svg'
-import kofi from '../../content/thumbnails/kofi.png'
 import ThemeContext from '../context/ThemeContext'
+// import kofi from '../../content/thumbnails/kofi.png'
 
 export default class Navigation extends Component {
   static contextType = ThemeContext
