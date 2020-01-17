@@ -92,7 +92,9 @@ export default class PostTemplate extends Component {
             .
           </p>
         </div>
-        <UserInfo config={config} />
+        {/*
+          <UserInfo config={config} />
+        */}
       </Layout>
     )
   }
