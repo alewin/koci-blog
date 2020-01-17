@@ -20,6 +20,11 @@ React, Redux, Vue, Node, Express, Git, Terraform, Jest, TestCafe, Jira, AWS, Sas
 
 Separation of concerns, Rest API Design, CI/CD, Infrastructure as Code, Agile Methodology, MVC Architecture, Testing (unit, end-to-end) Databases (MySQL), BEM Naming, Atomic Design
 
+## Education
+
+- [_2009 - 2014_] Technical and Professional Institute Diploma
+- [_2014 - 2018_] Bachelor's degree University of Bologna [Thesis: Android - Kotlin](https://amslaurea.unibo.it/15446/)
+
 ## Experience
 
 ### Web Developer
@@ -34,7 +39,7 @@ Separation of concerns, Rest API Design, CI/CD, Infrastructure as Code, Agile Me
 
 - Development of the backend, frontend part of enterprise portals using NodeJS, KeyStone, MongoDB
 
-### Software Developer Intership
+### Software Developer Internship
 
 **GetConnected** - _2017 | Bologna, BO_
 
@@ -50,4 +55,4 @@ Separation of concerns, Rest API Design, CI/CD, Infrastructure as Code, Agile Me
 
 **FutureDem** - _2014 - 2016  | Bologna, BO_
 
-- Developed the internal user management system, One page static website for events, mantain emails, backups, blog (cPanel)
+- Developed the internal user management system, One-page static website for events, maintain emails, backups, blog (cPanel)
