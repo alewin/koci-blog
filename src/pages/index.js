@@ -23,7 +23,7 @@ export default class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Developer & Writer`} />
+        <Helmet title={`${config.siteTitle} – Web Developer`} />
         <SEO />
         <div className="container">
           <div className="lead">

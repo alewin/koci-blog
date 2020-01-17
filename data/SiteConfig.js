@@ -15,6 +15,13 @@ const config = {
   userName: 'Koci',
   userEmail: 'ko.alessio@gmail.com',
   userTwitter: 'alessiokoci',
+  gitalk: {
+    clientID: 'f4374f2944ce784aae82',
+    clientSecret: '3bfc5e9088d6d05dafb19149160186c22f1e411c',
+    repo: 'koci-blog',
+    owner: 'alewin',
+    admin: ['alewin'],
+  },
   menuLinks: [
     {
       name: 'About me',
