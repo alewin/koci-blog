@@ -16,9 +16,9 @@ export default class Footer extends Component {
           <a href="https://ko-fi.com/alessiokoci" target="_blank" rel="noopener noreferrer">
             Buy me a coffe
           </a>
+          <Link to="/credits">Credits</Link>
         </div>
         <div>
-          <Link to="/credits">Credits</Link>
           <a href="https://github.com/alewin" title="Open-source on GitHub">
             <img
               src={github}
