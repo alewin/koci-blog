@@ -51,7 +51,7 @@ Separation of concerns, Rest API Design, CI/CD, Infrastructure as Code, Agile Me
 
 - Lessons and after classes ( Javascript, Css )
 
-### Web Master
+### WebMaster
 
 **FutureDem** - _2014 - 2016  | Bologna, BO_
 
