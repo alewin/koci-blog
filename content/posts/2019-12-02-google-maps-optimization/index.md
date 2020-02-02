@@ -313,9 +313,9 @@ with three different billing, therefore I suggest you filter only the fields you
 This billing is use when any of these fields are requested:
 `address_component`, `adr_address`, `alt_id`, `formatted_address`, `geometry (location)`, `icon`, `id`, `name`, `permanently_closed`, `photo`, `place_id`, `plus_code`, `scope`, `type`, `url`, `utc_offset`, `vicinity`
 
-| 0 – 100,000 requests | 100,001 – 500,000  requests |
-| -------------------- | --------------------------- |
-| 0.00$ per each       | 0.00$ per each              |
+| 0 – 100,000 requests  | 100,001 – 500,000  requests |
+| --------------------- | --------------------------- |
+| 0.00$ per each (Free) | 0.00$ per each (Free)       |
 
 The fields of the Basic category are **included** in the basic cost of the request for Places and do not involve any additional cost
 
@@ -345,7 +345,7 @@ Knowing in advance what information you need you can **filter** the request into
 so for example, if you just want to know `formatted_address` and `geometry`, you can save `$0.008` by filtering the request,
 which may seem derisory, but with a high volume of data in the order of 10,000 requests per day, we'll have a monthly savings of `$2400`
 
-**Example PlaceDetails Requst:**
+**Example PlaceDetails Request:**
 
 ```javascript
 https://maps.googleapis.com/maps/api/place/details/json?placeid=PLACE_ID&fields=formatted_address,geometry&key=YOUR_API_KEY
@@ -373,7 +373,7 @@ var autocomplete = new google.maps.places.Autocomplete(
 
 ---
 
-## 7 Optimize the UI
+## 7. Optimize the UI
 
 **Dynamic maps** cost much more than **static maps**, as we have seen before with 200 dollars we will have **100,000** Static maps while if we use dynamic maps with 200 dollars we will have only **28,500**.
 Switching from dynamic maps to static maps (where possible) we can have a **saving** of about 70%.
@@ -392,24 +392,24 @@ Summarizing: requests to APIs that include user interaction should only be sent 
 
 ---
 
-## 8 Normalize latitude and longitude
+## 8. Normalize latitude and longitude
 
 A statistic definition of "**normalization values**" could be: allowing the comparison of corresponding normalized values for different datasets in a way that eliminates the effects of certain gross influences.
 
 The **latitude** and **longitude** values ​​can also have 8 **decimals**, but going into detail often such **precision** is not necessary:
 
 ```md
-DECIMAL         DEGREES          DISTANCE
--------         -------          --------
-|  0  |        1                111  km
-|  1  |        0.1              11.1 km
-|  2  |        0.01             1.11 km
-|  3  |        0.001            111  m
-|  4  |        0.0001           11.1 m
-|  5  |        0.00001          1.11 m
-|  6  |        0.000001         11.1 cm
-|  7  |        0.0000001        1.11 cm
-|  8  |        0.00000001       1.11 mm
+| DECIMAL | DEGREES    | DISTANCE |
+| ------- | ---------- | -------- |
+| 0       | 1          | 111  km  |
+| 1       | 0.1        | 11.1 km  |
+| 2       | 0.01       | 1.11 km  |
+| 3       | 0.001      | 111  m   |
+| 4       | 0.0001     | 11.1 m   |
+| 5       | 0.00001    | 1.11 m   |
+| 6       | 0.000001   | 11.1 cm  |
+| 7       | 0.0000001  | 1.11 cm  |
+| 8       | 0.00000001 | 1.11 mm  |
 ```
 
 If our application requires numerous static maps or use many geocoding services, to **increase cache hit rates**, we can normalize the **latitude** and **longitude** by rounding to 6 or less decimal, which provides a precision of about 11 centimeters, taking advantage of **browser caching**.
@@ -417,16 +417,16 @@ If our application requires numerous static maps or use many geocoding services,
 **Example**:
 
 ```javascript
-const normalize = (lat,lng) =>{
-  return [lat.toFixed(5), lng.toFixed(5)
+const normalize = (lat, lng) =>{
+  return [lat.toFixed(5), lng.toFixed(5)]
 }
 
-normalize(42.74625364, 12.48372645) // output: 42.74625, 12.48372
+normalize(42.74625364, 12.48372645) // output: [42.74625, 12.48372]
 ```
 
 ---
 
-## 9 Geocoding API
+## 9. Geocoding API
 
 Often when a user types an address on input, this address may contain errors. Using services like `PlacesService` or the `Autocomplete` we can benefit from automatic corrections to search for addresses even if you get some letters wrong:
 
@@ -461,7 +461,7 @@ https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Park
 
 ---
 
-## 10 Limit Directions API waypoints
+## 10. Limit Directions API waypoints
 
 When you are using the [Routes](https://cloud.google.com/maps-platform/routes/) APIs, you can optimize your application, limiting the numbers of waypoints, and avoiding the **Waypoints optimization**
 
@@ -502,9 +502,47 @@ by ordering the various places according to their distance, we will have
 
 ---
 
-## 11 *Comment!*
+## 11. Use Embed Maps ( Free )
 
-There are not 11° tips, write a comment with your suggestion about Google Maps Services based on your experience...
+One of the few free services offered by **Google Maps Services Platform**, is the use of `Embed maps`.
+Embed maps allow you to view a dynamic map, completely **free** of charge.
+
+![embed map](images/embedmap.png)
+
+**Embed:**
+A simple dynamic map, with optional markers and the possibility to move between maps and zoom in.
+
+| 0 – 100,000 requests  | 100,001 – 500,000  requests |
+| --------------------- | --------------------------- |
+| 0.00$ per each (Free) | 0.00$ per each (Free)       |
+
+**Embed Advanced:**
+It has the same features as the free basic version (Embed), but with the addition of `Directions`, `Street View`, or `Search mode`.
+
+| 0 – 100,000 requests              | 100,001 – 500,000  requests       |
+| --------------------------------- | --------------------------------- |
+| 0.01$ per each, (10.00$ per 1000) | 0.008$ per each, (8.00$ per 1000) |
+
+I'll suggest this [tool](https://www.embedgooglemap.net/), which lets you create a dynamic embed map easily, and provides an `iframe` code of the map.
+
+**Can Embed maps replace Dynamic maps for free?**
+Not really, it depends on the use and the grade of manipulation you want to have.
+
+First, we need two preconditions:
+
+1) Embed maps need a `PlaceId` that can be retrieved **manually** from [Google Map](https://www.google.com/maps) (Free), or by using `getPlaceDetails` from the `PlacesService` (Paid)
+
+2) The [Terms of Service](https://cloud.google.com/maps-platform/terms) of Google maps does not allow storing and caching any responses from its API, except for `PlaceId` field which can be saved for future use.
+
+Analyzing the first point, the cost of the call `getPlaceDetails` that given an address gives us the `PlaceId` is `0.017$` per session, much higher than the cost of a normal `Dynamic Map`, which is `0.007$`!.
+
+Analyzing instead the second point, we can take advantage of storing the `PlaceId`, paying only once time for the service `getPlaceDetails`, store the value of the `PlaceId` of an `Address` and use the `Embed Map` in a freeway.
+
+---
+
+## 12. *Comment!*
+
+There is not 12° tip, write a comment with your suggestion about Google Maps Services based on your experience...
 
 ---
 
