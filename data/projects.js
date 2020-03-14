@@ -42,6 +42,16 @@ export default [
     description: 'Android App for planning, tracking your spending, monitoring your credit and budget ',
   },
   {
+    icon: '💻 ',
+    active: false,
+    title: 'JaeOS Kernel',
+    logo: 'C',
+    date: '2017-07-10',
+    path: 'https://github.com/alewin/ARMJaeOS',
+    source: 'https://github.com/alewin/ARMJaeOS',
+    description: 'Kernel for ARM: basic functionalities of a kernel such as system initialization, scheduling, syscall handling, interrupt handling',
+  },
+  {
     icon: '📚 ',
     active: false,
     title: 'EasyRash',
