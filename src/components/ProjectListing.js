@@ -5,7 +5,7 @@ import reactLogo from '../images/languages/reactjs.png'
 import angularLogo from '../images/languages/angularjs.png'
 import androidLogo from '../images/languages/android.png'
 import nodeLogo from '../images/languages/nodejs.png'
-
+import cLogo from '../images/languages/c.png'
 
 export default class ProjectListing extends Component {
   render() {
@@ -16,6 +16,7 @@ export default class ProjectListing extends Component {
       Angular: angularLogo,
       Android: androidLogo,
       Node: nodeLogo,
+      C: cLogo,
     }
 
     return (
