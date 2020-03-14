@@ -9,5 +9,6 @@ At the moment I work mainly in the Javascript world, but I find interesting inte
 The goal of this blog is to encourage me to learn and especially to share what I have learned.
 
 - [Resume](/resume)
-- [Contact](/contact)
+- [Projects](/projects)
 - [Articles](/blog)
+- [Contact](/contact)

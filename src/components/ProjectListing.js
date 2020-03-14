@@ -1,9 +1,22 @@
 import React, { Component } from 'react'
 import GitHubButton from 'react-github-btn'
 
+import reactLogo from '../images/languages/reactjs.png'
+import angularLogo from '../images/languages/angularjs.png'
+import androidLogo from '../images/languages/android.png'
+import nodeLogo from '../images/languages/nodejs.png'
+
+
 export default class ProjectListing extends Component {
   render() {
     const { projects } = this.props
+
+    const logoMap = {
+      React: reactLogo,
+      Angular: angularLogo,
+      Android: androidLogo,
+      Node: nodeLogo,
+    }
 
     return (
       <section className="projects">
@@ -19,9 +32,11 @@ export default class ProjectListing extends Component {
                 <div className="project-icon">{project.icon}</div>
                 <div className="project-title">{project.title}</div>
               </a>
+              <div className="project-date">{project.date}</div>
             </h2>
             <p>{project.description}</p>
             <div className="buttons">
+              <img src={logoMap[project.logo]} alt={project.logo} className="language" />
               <GitHubButton href={project.source} data-size="large" data-show-count="true">
                 Source
               </GitHubButton>
