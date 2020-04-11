@@ -6,7 +6,7 @@ thumbnail: '../../thumbnails/maps.png'
 slug: cost-saving-and-optimize-google-maps-services
 categories:
   - Tips
-  - Google Maps
+  - Map Service
 tags:
   - Google maps
   - Javascript
@@ -20,6 +20,7 @@ Google has organized his **Google Maps Services Platform** in three different ca
 3. [Places](https://cloud.google.com/maps-platform/places/) ( *Geocoding, Autocomplete, Place Details, ...* )
 
 ![ok](images/maps.png)
+
 Each category includes different services, where the cost of them is related to usage.
 Every month Google offers you **$200/month free credit** for Maps, Routes and Places, that are equivalent to:
 
@@ -39,7 +40,7 @@ Now I wanna show you some **technical and practical tips**, to avoid high monthl
 
 ## 1. Debouncing Request
 
-**Debouncing** is a programming practice used to ensure that time-consuming tasks do not fire so often so that it doesn't jeopardise the performance of the web page. In other words, it **limits the rate** at which a function gets invoked.
+**Debouncing** is a programming practice used to ensure that time-consuming tasks do not fire often, so it doesn't jeopardise the performance of the web page. In other words, it **limits the rate** at which a function gets invoked.
 
 ![debounce](images/debounce.png)
 
@@ -57,7 +58,7 @@ const createGoogleMapsUrl = (w,h) => {
 window.addEventListener('resize', () => createGoogleMapsUrl(calcW(), calcH()))
 ```
 
-If a user resizes the page, the map will hypothetically request Google StaticMap API **for each px**!
+If a user resizes the page, the function (StatiMap service) will be called **for each px**!
 
 **![ok](../../images/commons/yes.svg) GOOD:**
 
@@ -70,9 +71,9 @@ window.addEventListener('resize', () => createGoogleMapsUrl(calcW(), calcH()))
 
 ```
 
-Wrapping the function `createGoogleMapsUrl` inside a [debounce](https://css-tricks.com/debouncing-throttling-explained-examples/) will allow us to avoid calling the Google API to **every** single-pixel since we set a timeout range to avoid repeated requests.
+Wrapping the function `createGoogleMapsUrl` inside a [debounce](https://css-tricks.com/debouncing-throttling-explained-examples/) will allow us to avoid calling the Google API for **every** single-pixel since we set a timeout range to avoid repeated requests.
 
-This technique can also be used for search with **autocomplete** and/or **geocoding** services, avoiding making a request for each character the user type in an input, waiting through a **debounce** for the request to start.
+This technique can also be used for search with **autocomplete** and/or **geocoding** services, avoiding making a request for each character the user type in an input.
 
 **Example `getPlacePredictions`**
 
@@ -89,13 +90,14 @@ autocomplete_input.addEventListener('input', debounce(function() {
 
 ## 2. Caching
 
-By default the browser keeps its cache, avoiding re-execute requests previously made.
-Since the **browser** is responsible for maintaining the cache, we cannot know if a resource was cached, but we could improve our UI, considering that if during the session a user saw a "static map", we could show him the same image again without having to pay for a further request.
+By default the browser keeps it's own cache, avoiding re-execute requests previously made.
+Since the **browser** is responsible for maintaining the cache, we cannot know if a resource was cached, but we could improve our UI. Considering that if during the session a user saw a "static map", we could show him the same image again without having to pay for a further request.
 
 ![caching browser](images/cache.jpg)
 
-The Google web service responses always include the **Cache-Control HTTP** header, which indicates the period for which you can cache the result.
+The Google web service responses always include the **Cache-Control HTTP** header, which indicates the period for which the browser can cache the result.
 For the static map, this value is `86400` ms, `Cache-Control: public, max-age=86400` so the cache of the browser will be valid for exactly **24 hours**.
+However, this doesn't mean that we can use a Proxy to cache all API calls directed to Google, in fact it's forbidden by [Terms of Service](https://cloud.google.com/maps-platform/terms)
 
 **Simulate browser caching**:
 *This is not a practical tip, but it allows us to understand how browser cache works and eventually trying to simulate it.*
@@ -114,7 +116,7 @@ const fetchStaticMap = async (options) => {
 }
 ```
 
-Doing so we will have more control over the cache, setting, for example, a custom counter or side effect based on the number of calls.
+Doing so we will have more control over the cache, setting for example, a custom counter or running a side effect based on the number of calls.
 
 ---
 
@@ -140,10 +142,10 @@ const createGoogleMapsUrl = debounce((w,h) => {
 window.addEventListener('resize', () => createGoogleMapsUrl(calcW(), calc()))
 ```
 
-In this way, we avoid making **unnecessary requests** (641x641, 642x642, etc..) because they're going to be turned into the max fixed size of 640x640, taking advantage of the **browser caching**.
+In this way, we avoid making **unnecessary requests** (641x641, 642x642, etc..) because they're resized into 640x640, taking advantage of the **browser caching**.
 
 **Tips:**
-By playing with the **CSS** we can set 3 different **media queries**, so that, in the worst case, the user will make a maximum of 3 requests to the **Static Map** service.
+By playing with **CSS** we can set 3 different **media queries**, so in the worst case, the user will make a maximum of 3 requests to the **Static Map** service.
 
 ```css
 @media (min-width: 1024px) { height: '200px'; }
@@ -185,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 ```
 
-This pattern is generally used for images but we can replicate a similar pattern for **StaticMap**, **DynamicMap** or **geocoding**" services to use the same logic to participate calls.
+This pattern is generally used for images but we can replicate a similar pattern for **StaticMap**, **DynamicMap** or **geocoding** services to use the same logic to postpone calls.
 
 **Pseudo ReactJS Lazy loading Hook:**
 
@@ -548,8 +550,10 @@ There is not 12° tip, write a comment with your suggestion about Google Maps Se
 
 ## Conclusion
 
-The services offered by Google, in **large scale** can be expensive, but they are always very complete and detailed, and with a few little tricks like we could get a good UI result and saving.
-Google has monopolized the Maps and geocoding services, there are **alternatives** like MapBox, Here, etc.. but usually the accuracy and the details are not the same.
 Other useful tips are to **monitor** usage of your API for anomalies, **restrict** your API keys to specific IP addresses, referrer URLs or mobile apps and set a **budget alert**.
 
-In the next article, I'd like to talk about **MapBox**, the advantages and disadvantages of switching from Google To Mapbox.
+The services offered by Google, in **large scale** can be expensive, but they are always very complete and detailed, and with a few little tricks, we could get a good UI result and saving money.
+Google has monopolized the Maps and geocoding services, there are **alternatives** like MapBox, Maptiler, Here, etc.. but usually the accuracy and the details are not the same.
+Other useful tips are to **monitor** usage of your API for anomalies, **restrict** your API keys to specific IP addresses, referrer URLs or mobile apps and set a **budget alert**.
+
+In the next article, I'd like to talk about **MapBox**, **MapTiler** and **Open Street Map**, the advantages and disadvantages of switching maps service.
