@@ -3,7 +3,7 @@ const config = {
   siteTitleShort: 'Koci',
   siteTitleAlt: 'Alessio Koci',
   siteLogo: '/logos/logo-1024.png',
-  siteUrl: 'http://alessiokoci.com',
+  siteUrl: 'https://alessiokoci.com',
   repo: 'https://github.com/alewin/koci-blog',
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
