@@ -46,7 +46,6 @@ export default class Footer extends Component {
               alt="Gatsby"
             />
           </a>
-
         </div>
       </footer>
     )
