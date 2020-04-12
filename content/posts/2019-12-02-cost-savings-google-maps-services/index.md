@@ -1,16 +1,16 @@
 ---
 date: 2020-04-12
-title: 'Cost saving and optimize Google Maps Services'
+title: 'Cost savings Google Maps Services'
 template: post
 thumbnail: '../../thumbnails/maps.png'
-slug: cost-saving-and-optimize-google-maps-services
+slug: cost-savings-google-maps-services
 categories:
   - Tips
-  - Map Service
+  - Map Services
 tags:
   - Google maps
   - Javascript
-  - Saving
+  - Savings
   - Optimize
 ---
 Google has organized his **Google Maps Services Platform** in three different categories:
