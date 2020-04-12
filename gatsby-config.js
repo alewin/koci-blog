@@ -1,3 +1,4 @@
+require("dotenv").config({ path: `.env` })
 const urljoin = require('url-join')
 const config = require('./data/SiteConfig')
 
