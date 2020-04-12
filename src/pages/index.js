@@ -31,9 +31,8 @@ export default class Index extends Component {
               <h1>{`Hey, I'm Alessio`}</h1>
               <p>
                 I'm a front end developer, and this is my blog where i
-                <Link to="/blog"> write </Link> about JavaScript, and web development
+                <Link to="/blog"> write </Link> about JavaScript, and web development.
               </p>
-
             </div>
             <div className="newsletter-section">
               <img src={koci} className="newsletter-avatar" alt="Koci" />
@@ -45,7 +44,7 @@ export default class Index extends Component {
                     data-show-count="true"
                   >
                     alewin
-                </GitHubButton>
+                  </GitHubButton>
                 </div>
 
               </div>

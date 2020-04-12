@@ -9,14 +9,17 @@ export default class Footer extends Component {
     return (
       <footer className="footer container">
         <div>
-          <Link to="/contact">Contact</Link>
           <a href="/rss.xml" target="_blank" rel="noopener noreferrer">
             RSS
+          </a>
+          <Link to="/contact">Contact</Link>
+          <Link to="/credits">Credits</Link>
+          <a href="https://github.com/alewin" target="_blank" rel="noopener noreferrer">
+            Github
           </a>
           <a href="https://ko-fi.com/alessiokoci" target="_blank" rel="noopener noreferrer">
             Buy me a coffe
           </a>
-          <Link to="/credits">Credits</Link>
         </div>
         <div>
           <a href="https://github.com/alewin" title="Open-source on GitHub">
