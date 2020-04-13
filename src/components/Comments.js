@@ -6,10 +6,10 @@ class Comments extends Component {
     return (
       <script
         src="https://utteranc.es/client.js"
-        repo="alewin/koci-blog"
-        issue-term="pathname"
-        label="Comment"
-        theme="github-light"
+        data-repo="alewin/koci-blog"
+        data-issue-term="pathname"
+        data-label="Comment"
+        data-theme="github-light"
         crossOrigin="anonymous"
         async
       />
