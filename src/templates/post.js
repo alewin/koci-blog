@@ -3,12 +3,11 @@ import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../layout'
-import UserInfo from '../components/UserInfo'
 import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import { formatDate, editOnGithub } from '../utils/global'
-import Comment from "../components/Comments";
+import Comments from '../components/Comments'
 
 export default class PostTemplate extends Component {
   constructor(props) {
@@ -83,7 +82,7 @@ export default class PostTemplate extends Component {
           <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
         </article>
         <div className="container no-comments">
-          <Comment title={slug} />
+          <Comments />
         </div>
         {/*
           <UserInfo config={config} />
