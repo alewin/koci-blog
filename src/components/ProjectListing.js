@@ -33,7 +33,7 @@ export default class ProjectListing extends Component {
                 <div className="project-icon">{project.icon}</div>
                 <div className="project-title">{project.title}</div>
               </a>
-              <div className="project-date">{project.date}</div>
+              <p className="project-date">{project.date}</p>
             </h2>
             <p>{project.description}</p>
             <div className="buttons">
