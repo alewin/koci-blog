@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import ProjectListing from '../components/ProjectListing'
 import Layout from '../layout'
 import config from '../../data/SiteConfig'
