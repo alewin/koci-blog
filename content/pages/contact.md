@@ -4,8 +4,9 @@ slug: contact
 template: page
 ---
 
-- **Email**: [ko{DOT}alessio[AT]gmail{DOT}com](mailto:ko{DOT}alessio[AT]gmail{DOT}com)
 - **GitHub**: [alewin](https://github.com/alewin)
-- **Linkldn**: [alessiokoci](https://www.linkedin.com/in/alessiokoci/)
+- **StackOverflow**: [alessio-koci](https://stackoverflow.com/users/1477950/)
+- **Linkedin**: [alessiokoci](https://www.linkedin.com/in/alessiokoci/)
 - **Twitter**: [alessiokoci](https://twitter.com/alessiokoci)
 - **RSS feed** [Feed](https://alessiokoci.com/rss.xml)
+- **Email**: [ko{DOT}alessio[AT]gmail{DOT}com](mailto:ko{DOT}alessio[AT]gmail{DOT}com)
