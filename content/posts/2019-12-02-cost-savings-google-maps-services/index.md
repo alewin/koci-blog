@@ -1,5 +1,5 @@
 ---
-date: 2020-04-12
+date: 2020-04-13
 title: 'Cost savings Google Maps Services'
 template: post
 thumbnail: '../../thumbnails/maps.png'
@@ -15,9 +15,9 @@ tags:
 ---
 Google has organized his **Google Maps Services Platform** in three different categories:
 
-1. [Maps](https://cloud.google.com/maps-platform/maps/) ( *StaticMap, DynamicMaps, StreetView, ...* )
-2. [Routes](https://cloud.google.com/maps-platform/routes/) ( *Directions, Roads, Distance, ...* )
-3. [Places](https://cloud.google.com/maps-platform/places/) ( *Geocoding, Autocomplete, Place Details, ...* )
+- [Maps](https://cloud.google.com/maps-platform/maps/) ( *StaticMap, DynamicMaps, StreetView, ...* )
+- [Routes](https://cloud.google.com/maps-platform/routes/) ( *Directions, Roads, Distance, ...* )
+- [Places](https://cloud.google.com/maps-platform/places/) ( *Geocoding, Autocomplete, Place Details, ...* )
 
 ![ok](images/maps.png)
 
@@ -33,7 +33,7 @@ Every month Google offers **$200/month free credit** for Maps, Routes and Places
 
 Once the monthly free credit has been used, the prices are listed in the [Pricing](https://cloud.google.com/maps-platform/pricing/sheet/) section. Though I'll suggest this [tool](https://credits-calculator.appspot.com/), which gives a vision of the monthly cost.
 
-Since the **Google Maps Services platform** is very expensive on a large scale, for whoever wants to continue using their services, is forced to count all the API calls, one by one, trying to **optimize** their project **infrastructure**, and find what is the most efficient implementation that **meet the budget**, the **user experience** and **business goals**.
+Since the **Google Maps Services platform** is expensive on large scale, for whoever wants to continue using their services, is forced to count all the API calls, one by one, trying to **optimize** their project **infrastructure**, and find what is the most efficient implementation that **meet the budget**, the **user experience** and **business goals**.
 
 Now I want to show you some **technical and practical tips**, to avoid high monthly billing cost, with little effort, so let's start!
 
@@ -74,7 +74,7 @@ window.addEventListener('resize', () => createGoogleMapsUrl(calcW(), calcH()))
 
 Wrapping the function `createGoogleMapsUrl` inside a [debounce](https://css-tricks.com/debouncing-throttling-explained-examples/) will allow us to avoid calling the Google API for **every** single-pixel since we set a timeout range to avoid repeated requests.
 
-This technique can also be combined with a search input, like **autocomplete** and/or **geocoding**  services, avoiding making a request for each character the user type in an input.
+This technique can also be combined with a search input, like **autocomplete** and/or **geocoding**  services, to avoid requesting each character the user type in an input.
 
 **Example: `getPlacePredictions`** with debounce
 
@@ -94,14 +94,14 @@ autocomplete_input.addEventListener('input', debounce(function() {
 By default, the browser manages the cache, avoiding re-execute requests previously made.
 Since the **browser** is responsible for maintaining the cache, we cannot know if a resource was cached, but we could improve our UI knowing this.
 
-The idea is simple, if a page show a static map, we can show it again on another page, without paying more.
+The idea is simple, if a page has a static map, we can show it again on another page, without paying more.
 
 ![caching browser](images/cache.jpg)
 
-The Google web service responses include the **Cache-Control HTTP** header, which indicates the period for which the browser can cache the result of the request.
+Google web service responses include the **Cache-Control HTTP** header, which indicates the period for which the browser can cache the result of the request.
 
-For the static map, this value is `Cache-Control: public, max-age=86400`, `86400` ms,  so the cache of the browser will be valid for exactly **24 hours**.
-However, this doesn't mean that we can use a Proxy to cache all API calls directed to Google, in fact it's forbidden by [Terms of Service](https://cloud.google.com/maps-platform/terms)
+The `Cache-Control` for the static map is `Cache-Control: public, max-age=86400`, `86400` ms,  so the cache of the browser will be valid for exactly **24 hours**.
+However, this doesn't mean that we can use a Proxy to cache all API calls directed to Google it's forbidden by [Terms of Service](https://cloud.google.com/maps-platform/terms)
 
 **Simulate browser caching**:
 
@@ -152,7 +152,7 @@ const createGoogleMapsUrl = debounce((w,h) => {
 window.addEventListener('resize', () => createGoogleMapsUrl(calcW(), calc()))
 ```
 
-In this way, we avoid making **unnecessary requests** (641x641, 642x642, etc..) because they're resized into 640x640, taking advantage of the **browser caching**.
+In this way, we avoid making **unnecessary requests** (`641x641`, `642x642`, etc..) because they're resized into 640x640, taking advantage of the **browser caching**.
 
 **Tips:**
 By playing with **CSS** we can set 3 different **media queries**, so in the worst case, the user will make a maximum of 3 requests to the **Static Map** service.
@@ -169,7 +169,7 @@ By playing with **CSS** we can set 3 different **media queries**, so in the wors
 
 ## 4. Lazyload request
 
-**Lazy loading** is a design pattern used to postpone a request until is not necessary.
+**Lazy loading** is a design pattern used to postpone a request until it is not necessary.
 
 ![lazy loading](images/lazy.png)
 
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
 })
 ```
 
-This pattern is generally used for images but it's replicable for **StaticMap**, **DynamicMap** or **geocoding** services to use the same logic to postpone calls.
+This pattern is generally used for images but it's replicable for **StaticMap**, **DynamicMap** or **geocoding**.
 
 **Pseudo ReactJS Lazy loading Hook:**
 
@@ -296,9 +296,10 @@ autocompleteService.getPlacePredictions({
 - If you want to have more control, you should use the `AutocompleteService` instead of the `Widgets`.
 - If you want to have an easy implementation with session token is preferable to use the `Widget`
 
-90% of the time it is preferable to use the `sessions` because they allow `grouping requests` by paying a single fee. There are cases where you need to make a few requests, we could take **advantage** of the non-session method (**per request**) and pay less.
+90% of the time it is preferable to use the `sessions` because they allow `grouping requests` by paying a single fee.
+There are other cases where only a few requests are sufficient, in these cases we could take **advantage** of (**Per Request**) method and pay less.
 
-For example a simple entry of a zip code, can adopt two technique to save money:
+For example, a simple entry of a zip code, can adopt two technique to save money:
 
 - a minimum of 3 digits characters
 - `debounce` pattern
@@ -312,9 +313,9 @@ Since 1 request using **per request** method is less expensive than a **request 
 
 ## 6. Filter PlaceDetail request
 
-**Google Maps Services platform** introduced a new parameter named `fields` to Places API, used to filter the request and pay for only the information needed.
+**Google Maps Services platform** introduced a new parameter named `fields` to Places API, used to filter the request and pay only for the information needed.
 
-This is important because for each information requested, the overall cost will be higher, and by default the call to `PlaceDetail` requires all the information (`fields`)
+This is important because for each information requested, the overall cost will be higher, and by default, the call to `PlaceDetail` requires all the information (`fields`)
 
 The `fields` are divided into 3 types ( **SKU** ), with three different billing:
 
@@ -397,7 +398,7 @@ Switching from dynamic maps to static maps (where possible) we can have a **savi
 ![airbnb](images/airbnb.png)
 *The dynamic map has only 1 marker*
 
-Taking Airbnb as an example, If the search returns only **one result**, a dynamic map is **useless** and expensive, in this case, replace the dynamic map with a **static map** since the user has only **one** element to show.
+Taking Airbnb as an example, If the search returns only **one result**, a dynamic map is **useless** and expensive, in this case, replace the dynamic map with a **static map**.
 
 **Another Example:**
 in other cases we can avoid using an unnecessary static map, removing it or replacing it with a CTA, that has a direct link to google maps.
@@ -411,7 +412,7 @@ Requests that require user interaction should only be sent when needed, waiting 
 
 ## 8. Approximate latitude and longitude
 
-The **latitude** of a point on Earth is the angle between the equatorial plane and the straight line that passes through that point and through the center of the Earth. The **longitude** of a point on Earth is the angle of a reference meridian to another meridian that passes through that point.
+The **latitude** of a point on Earth is the angle between the equatorial plane and the straight line that passes through that point and the center of the Earth. The **longitude** of a point on Earth is the angle of a reference meridian to another meridian that passes through that point.
 
 Since **one degree of latitude** equals approximately **111km** (69 miles), we can get this table:
 
@@ -432,7 +433,7 @@ Since **one degree of latitude** equals approximately **111km** (69 miles), we c
 1 mile = __1.607 km__
 
 An accuracy level of 8 decimal places is not always relevant.
-To **increase cache hit rates**, we can approximate the **latitude** and **longitude** by rounding to 6 or 2 decimal, taking advantage of **browser caching** or a **proxy caching server**.
+To **increase cache hit rates**, we can approximate the **latitude** and **longitude** by rounding to 6 or 2 decimals, taking advantage of **browser caching** or a **proxy caching server**.
 
 **Example**:
 
@@ -448,14 +449,14 @@ approximate(42.74625364, 12.48372645) // output: [42.74625, 12.48372]
 
 ## 9. Geocoding API
 
-Using the `PlacesService` or the `Autocomplete` we can benefit from automatic corrections to search for addresses.
+Using the `PlacesService` or the `Autocomplete` we can benefit from automatic address search corrections.
 
 **Example**:
 
 Google correct any user typo, with `PlacesService` or `Autocomplete`
 > Ro**n**e, Italy ==> Ro**m**e, Italy // place_id: ChIJN1t_tDeuEmsRUsoyG83frY4
 
-Once the user has specified the **address**, to retrieve more information and **details** about the location, an additional call must be made, specifying the `place_id` of the searched address.
+Once the user has specified the **address**, to retrieve more information and **details** about the location, an additional request must be made, specifying the `place_id` of the searched address.
 
 **Example** `PlaceServices`
 
@@ -471,8 +472,8 @@ placeServices.getDetails({
 
 **Tips:**
 
-- If we have an unambiguous address, and we just want to know its `latitude` and `longitude` we can reduce costs by using `Geocoding` instead of `getDetails` service.
-- If we have an ambiguous and incomplete address we need to use a `Place Autocomplete`
+- If we have an **unambiguous** address, and we just want to know its `latitude` and `longitude` we can reduce costs by using `Geocoding` instead of `getDetails` service.
+- If we have an **ambiguous** and incomplete address we need to use a `Place Autocomplete`
 
 **Example `Geocode` request:**
 
@@ -485,28 +486,28 @@ https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Park
 
 ## 10. Directions API waypoints
 
-[Routes](https://cloud.google.com/maps-platform/routes/) is a service that calculates directions between locations and create itineraries, you can use these features with [Direction API](https://developers.google.com/maps/documentation/directions/start).
+[Routes](https://cloud.google.com/maps-platform/routes/) is a service that calculates directions between locations and creates itineraries, you can use these features with [Direction API](https://developers.google.com/maps/documentation/directions/start).
 
 There are two types of **Directions API:**
 
 - Basic
 - Advanced
 
-**Directions Pricing Basic:**
+**Basic Directions Pricing:**
 Less than *10* `waypoints` with `optimize:false`
 
 | 0 – 100,000 requests              | 100,001 – 500,000  requests       |
 | --------------------------------- | --------------------------------- |
 | 0.005$ per each, (5.00$ per 1000) | 0.004$ per each, (4.00$ per 1000) |
 
-**Directions Pricing Advanced:**
+**Advanced Directions Pricing:**
 More than *10* `waypoints` with `optimize:true`
 
 | 0 – 100,000 requests              | 100,001 – 500,000  requests       |
 | --------------------------------- | --------------------------------- |
 | 0.01$ per each, (10.00$ per 1000) | 0.008$ per each, (8.00$ per 1000) |
 
-The optimization is based on `Travelling salesman problem`, but in order to save money we must also minimize the number of requests.
+The optimization is based on `Travelling salesman problem`, but in order to save money, we must also minimize the number of requests.
 
 There are cases where requests are redundant, let's consider this example
 
@@ -573,13 +574,13 @@ Analyzing instead the second point, we can take advantage of storing the `PlaceI
 
 Other useful tips are: **monitor** usage of your API to catch anomalies, set a **budget alert**, **restrict** your API keys to specific IP, using a **native app** to view maps (it's Free!) instead of a web application...
 
-There's not really 12° tip, **write a comment** with your tips about Google Maps Services based on your experience...
+There isn't 12° tip, **write a comment** with your tips about Google Maps Services based on your experience...
 
 ---
 
 ## Conclusion
 
 The services offered by Google, in **large scale** can be expensive, there are **alternatives** like MapBox, Maptiler, Here, etc.. but usually the accuracy and the details are not the same.
-This makes us reflect on the monopolization of a service that can enslave us, what would happen if Google made Google Analytics or Tag Manager paid? As it did 2 years ago for Google Maps?
+This makes us reflect on the monopolization of a service that can enslave us, what would happen if Google made Google Analytics or Tag Manager paid, as it did 2 years ago for Google Maps?
 
-In the next article, I'd like to talk about **MapBox**, **MapTiler** and **Open Street Map**, the advantages and disadvantages of switching maps service.
+In the next article, I'd like to talk about **MapBox**, **MapTiler** and **Open Street Map**, the advantages, and disadvantages of switching maps service.
