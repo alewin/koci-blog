@@ -1,20 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Comments extends Component {
-
-  render() {
-    return (
-      <script
-        src="https://utteranc.es/client.js"
-        data-repo="alewin/koci-blog"
-        data-issue-term="pathname"
-        data-label="Comment"
-        data-theme="github-light"
-        crossOrigin="anonymous"
-        async
-      />
-    )
-  }
-}
+const Comments = () => (
+  <section
+    ref={elem => {
+      if (!elem) {
+        return;
+      }
+      const scriptElem = document.createElement("script");
+      scriptElem.src = "https://utteranc.es/client.js";
+      scriptElem.async = true;
+      scriptElem.crossOrigin = "anonymous";
+      scriptElem.setAttribute("data-repo", "alewin/koci-blog");
+      scriptElem.setAttribute("data-issue-term", "pathname");
+      scriptElem.setAttribute("data-label", "Comment");
+      scriptElem.setAttribute("data-theme", "github-light");
+      elem.appendChild(scriptElem);
+    }}
+  />
+);
 
 export default Comments;
