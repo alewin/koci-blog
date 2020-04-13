@@ -38,8 +38,8 @@ class ThemeProvider extends Component {
     const iframe = document.querySelector('.utterances-frame');
     if(iframe){
       iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-      this.setState(prevState => ({ dark: !prevState.dark }))
     }
+    this.setState(prevState => ({ dark: !prevState.dark }))
   }
 
   setNotFound = () => {
