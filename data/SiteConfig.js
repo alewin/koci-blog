@@ -15,13 +15,6 @@ const config = {
   userName: 'Koci',
   userEmail: 'ko.alessio@gmail.com',
   userTwitter: 'alessiokoci',
-  gitalk: {
-    clientID: process.env.GATSBY_GITALK_CLIENT_ID,
-    clientSecret: process.env.GATSBY_GITALK_CLIENT_SECRET,
-    repo: 'koci-blog',
-    owner: 'alewin',
-    admin: ['alewin'],
-  },
   menuLinks: [
     {
       name: 'About',

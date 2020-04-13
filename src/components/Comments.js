@@ -1,34 +1,20 @@
 import React, { Component } from "react";
-import md5 from "md5";
-import Gitalk from 'gitalk'
-import config from "../../data/SiteConfig";
 
-import "gitalk/dist/gitalk.css";
-
-class Comment extends Component {
-  componentDidMount() {
-    const { clientID, clientSecret, repo, owner, admin } = config.gitalk;
-    const p = window.location.pathname;
-    const id = md5(p.endsWith("/") ? p.slice(0, -1) : p);
-    const { title } = this.props
-
-    const gitalk = new Gitalk({
-      clientID,
-      clientSecret,
-      repo,
-      owner,
-      admin,
-      distractionFreeMode: true,
-      id,
-      title,
-    });
-
-    gitalk.render("gitalk-container");
-  }
+class Comments extends Component {
 
   render() {
-    return <div id="gitalk-container" />;
+    return (
+      <script
+        src="https://utteranc.es/client.js"
+        repo="alewin/koci-blog"
+        issue-term="pathname"
+        label="Comment"
+        theme="github-light"
+        crossOrigin="anonymous"
+        async
+      />
+    )
   }
 }
 
-export default Comment;
+export default Comments;
