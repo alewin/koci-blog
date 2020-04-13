@@ -36,8 +36,10 @@ class ThemeProvider extends Component {
       theme: this.state.dark ? 'github-light' : 'icy-dark'
     };
     const iframe = document.querySelector('.utterances-frame');
-    iframe.contentWindow.postMessage(message, 'https://utteranc.es');
-    this.setState(prevState => ({ dark: !prevState.dark }))
+    if(iframe){
+      iframe.contentWindow.postMessage(message, 'https://utteranc.es');
+      this.setState(prevState => ({ dark: !prevState.dark }))
+    }
   }
 
   setNotFound = () => {
