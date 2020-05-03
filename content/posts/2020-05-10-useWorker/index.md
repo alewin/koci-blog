@@ -11,20 +11,45 @@ tags:
 ---
 
 
-https://github.com/alewin/useWorker
-Two months ago, I started to write my first Open Source react hook: [useWorker](https://github.com/alewin/useWorker). It's a library that allows you to use WebWorker simply and easily.
+Two months ago, I started to write my first Open Source **React Hook**: [useWorker](https://github.com/alewin/useWorker).
+A simply library that allows you to use WebWorker easily using Reactjs.
 
-### Feature:
-- Run expensive function without blocking UI
-- Supports Promises pattern instead of event-messages
-- Clear API (worker, status, terminate)
+Wait wait wait...
 
 # What are Web Workers?
-Javascript is a single-threaded language, based on the concept of [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) and Event Queue. Since Javascript have a single call stack, one heavy task can block the entire application.
-Web Workers allow to run scripts in background threads, utilizing all the CPUs core, without impacting to the single call stack.
+JavaScript is a single-threaded programming language, so it can run only one task at a time.
+
+The main thread is responsable to draw element, wait and run event handles, etcc..
+Since Javascript have a single call stack, based on the LIFO principle (Last-in-first-out), one heavy task can block or slowing the execution entire website.
+
+![call stack](images/callstack.png)
+
+Web workers is an Web API, that allow to run scripts in background threads, without impacting to the single call stack of the main thread.
+
+# How works Web Worker?
+Web worker has own EventLoop with their Call Stack. The Web Worker and the main thread communicate each other using a system of messages. with `postMessage` they can send a message, with `onmessage` they can recive a message.
+
+**Worker.js**
+```javascript
+onmessage = function(e) {
+  console.log(`Message received from main thread: ${e.data}`);
+  postMessage(`Hi main thread, I'm the worker.js`);
+}
+
+```
+
+**scripts.js**
+```javascript
+const worker = new Worker("worker.js");
+worker.postMessage('Hi');
+worker.onmessage = function(e) {
+  console.log(`Message received from worker: ${e.data}`)
+}
+```
+In this way, the main thread is responsable for only urgent task, and can delegate other heavy task to a web worker.
 
 # Then should I use the web worker for anything?, what are Web Worker for?
-No, you should use WebWorkers only when your task is blocking the UI, or is an intense CPU task.
+No, you should use it everywhere, WebWorkers should be used only for task that blocking the UI, or for intense CPU task.
 
 Some use cases:
 - Analyze Audio or video source
@@ -37,6 +62,14 @@ Some use cases:
 - Any intense CPU task, that could block UI
 
 
-## Why do I have to use useWorker()
+## Since Web worker are native, Why not use the API directly, instead of your hook?
+
+To use a web worker with native API you need to create a file with the worker content, and then import it `const worker = new Worker('workerFile.js`)
+
+useWorker, lets you to have the worker function whereever you want, event inside the main script `script.js`.
 
 
+### Feature:
+- Run expensive function without blocking UI
+- Supports Promises pattern instead of event-messages
+- Clear API (worker, status, terminate)
