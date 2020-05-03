@@ -1,8 +1,9 @@
 const path = require('path')
 const kebabCase = require('lodash.kebabcase')
 const moment = require('moment')
-const siteConfig = require('./data/SiteConfig')
 const sharp = require('sharp')
+const siteConfig = require('./data/SiteConfig')
+
 sharp.simd(false)
 sharp.cache(false)
 
@@ -56,7 +57,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   let slug
 
-  if (node.internal.type === 'MarkdownRemark') {
+  if (node.internal.type === 'Mdx') {
     const fileNode = getNode(node.parent)
     const parsedFilePath = path.parse(fileNode.relativePath)
 
@@ -94,7 +95,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
   const { name } = type
   const { createNodeField } = actions
-  if (name === 'MarkdownRemark') {
+  if (name === 'Mdx') {
     addSiblingNodes(createNodeField)
   }
 }
@@ -112,7 +113,7 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMdx {
               edges {
                 node {
                   frontmatter {
@@ -137,7 +138,7 @@ exports.createPages = ({ graphql, actions }) => {
         const tagSet = new Set()
         const categorySet = new Set()
 
-        result.data.allMarkdownRemark.edges.forEach(edge => {
+        result.data.allMdx.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
               tagSet.add(tag)

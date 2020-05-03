@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from '../layout'
 import PostTags from '../components/PostTags'
 import SEO from '../components/SEO'
@@ -21,7 +22,7 @@ export default class PostTemplate extends Component {
   render() {
     const { comments, error } = this.state
     const { slug } = this.props.pageContext
-    const postNode = this.props.data.markdownRemark
+    const postNode = this.props.data.mdx
     const post = postNode.frontmatter
     const popular = postNode.frontmatter.categories.find(category => category === 'Popular')
     let thumbnail
@@ -78,8 +79,11 @@ export default class PostTemplate extends Component {
               <PostTags tags={post.tags} />
             </div>
           </header>
-
-          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <div className="post">
+            <MDXRenderer>
+              {postNode.body}
+            </MDXRenderer>
+          </div>
         </article>
         <div className="container no-comments">
           <Comments />
@@ -95,8 +99,8 @@ export default class PostTemplate extends Component {
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+    mdx(fields: { slug: { eq: $slug } }) {
+      body
       timeToRead
       excerpt
       frontmatter {

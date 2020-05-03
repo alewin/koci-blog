@@ -72,9 +72,9 @@ export default class Index extends Component {
 
 export const pageQuery = graphql`
   query IndexQuery {
-    latest: allMarkdownRemark(
+    latest: allMdx(
       limit: 6
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       edges {
@@ -102,9 +102,9 @@ export const pageQuery = graphql`
         }
       }
     }
-    popular: allMarkdownRemark(
+    popular: allMdx(
       limit: 7
-      sort: { fields: [fields___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { categories: { eq: "Popular" } } }
     ) {
       edges {
