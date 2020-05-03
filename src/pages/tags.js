@@ -8,7 +8,7 @@ import config from '../../data/SiteConfig'
 
 export default class TagsPage extends Component {
   render() {
-    const { group } = this.props.data.allMarkdownRemark
+    const { group } = this.props.data.allMdx
 
     return (
       <Layout>

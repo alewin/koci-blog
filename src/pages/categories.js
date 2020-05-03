@@ -9,7 +9,7 @@ import config from '../../data/SiteConfig'
 export default class CategoriesPage extends Component {
   render() {
     const { data } = this.props
-    const { group } = data.allMarkdownRemark
+    const { group } = data.allMdx
 
     return (
       <Layout>

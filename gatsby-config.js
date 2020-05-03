@@ -58,8 +58,8 @@ module.exports = {
               maxWidth: 850,
             },
           },
-          'gatsby-remark-prismjs',
-          'gatsby-remark-copy-linked-files',
+          { resolve: 'gatsby-remark-prismjs' },
+          { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -117,7 +117,7 @@ module.exports = {
       options: {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
-          ret.allMarkdownRemark = ref.query.allMarkdownRemark
+          ret.allMdx = ref.query.allMdx
           ret.generator = 'Alessio Koci'
           return ret
         },
@@ -140,7 +140,7 @@ module.exports = {
           {
             serialize(ctx) {
               const { rssMetadata } = ctx.query.site.siteMetadata
-              return ctx.query.allMarkdownRemark.edges.map(edge => ({
+              return ctx.query.allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.fields.date,
                 title: edge.node.frontmatter.title,
