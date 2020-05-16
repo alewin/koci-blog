@@ -2,6 +2,7 @@
   "extends": ["airbnb", "prettier"],
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
+    "import/prefer-default-export": "off",
     "no-else-return": "off",
     "react/no-did-update-set-state": "off",
     "prefer-destructuring": "off",
@@ -9,6 +10,7 @@
     "react/prop-types": "off",
     "react/no-danger": "off",
     "react/button-has-type": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-filename-extension": "off",
     "react/no-array-index-key": "off",
     "react/destructuring-assignment": "off",

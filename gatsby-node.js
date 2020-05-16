@@ -87,7 +87,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         })
       }
     }
-    createNodeField({ node, name: 'slug', value: slug })
+    createNodeField({ node, name: 'slug', value: `/blog${slug}` })
     postNodes.push(node)
   }
 }

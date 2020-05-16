@@ -7,6 +7,9 @@ import config from '../../data/SiteConfig'
 import favicon from '../images/favicon.png'
 import '../styles/main.scss'
 
+import "prismjs/themes/prism-tomorrow.css"
+import "prismjs/plugins/command-line/prism-command-line.css"
+
 export default class MainLayout extends Component {
   static contextType = ThemeContext
 

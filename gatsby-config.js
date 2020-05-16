@@ -58,7 +58,20 @@ module.exports = {
               maxWidth: 850,
             },
           },
-          { resolve: 'gatsby-remark-prismjs' },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              showLineNumbers: true,
+              prompt: {
+                user: "root",
+                host: "localhost",
+                global: false,
+              },
+              escapeEntities: {},
+            },
+          },
           { resolve: 'gatsby-remark-copy-linked-files' },
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -148,7 +161,7 @@ module.exports = {
                 url: rssMetadata.site_url + edge.node.fields.slug,
                 guid: rssMetadata.site_url + edge.node.fields.slug,
                 custom_elements: [
-                  { 'content:encoded': edge.node.html },
+                  { 'content:encoded': edge.node.body },
                   { author: config.userEmail },
                 ],
               }))
@@ -163,7 +176,7 @@ module.exports = {
                 edges {
                   node {
                     excerpt(pruneLength: 180)
-                    html
+                    body
                     timeToRead
                     fields {
                       slug
