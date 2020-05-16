@@ -35,7 +35,7 @@ Once the monthly free credit has been used, the prices are listed in the [Pricin
 
 Since the **Google Maps Services platform** is expensive on large scale, for whoever wants to continue using their services, is forced to count all the API calls, one by one, trying to **optimize** their project **infrastructure**, and find what is the most efficient implementation that **meet the budget**, the **user experience** and **business goals**.
 
-Now I want to show you some **technical and practical tips**, to avoid high monthly billing cost, with little effort, so let's start!
+Now I want to give you some **technical and practical tips**, to avoid high monthly billing cost, with little effort, so let's start!
 
 ---
 
@@ -127,7 +127,7 @@ Doing so, we'll have more control over the cache, running a side effect based on
 
 ## 3. Staticmap Size
 
-Often, one of the most improvements to reduce costs of Maps Services is to convert dynamic maps to static maps, which are much cheaper, but there are some peculiarities to keep in mind.
+One of the best ways to reduce costs of Maps Services is to convert dynamic maps to static maps, which are much cheaper, but there are some peculiarities to keep in mind.
 
 The **Static Map** service if you aren't [Premium](https://developers.google.com/maps/premium) offers a max size of `640x640`, so if you **request** a static map with dimensions `641x641`, Google will offer anyway a `640x640` map, but you will pay for it.
 
@@ -155,7 +155,7 @@ window.addEventListener('resize', () => createGoogleMapsUrl(calcW(), calc()))
 In this way, we avoid making **unnecessary requests** (`641x641`, `642x642`, etc..) because they're resized into 640x640, taking advantage of the **browser caching**.
 
 **Tips:**
-By playing with **CSS** we can set 3 different **media queries**, so in the worst case, the user will make a maximum of 3 requests to the **Static Map** service.
+By playing with **CSS** we can set 3 different **media queries**, so in the worst-case scenario the user will make a maximum of 3 requests to the **Static Map** service.
 
 **Example: limit StaticMap with CSS**:
 
@@ -258,7 +258,7 @@ input.addEventListener('input', onChange);
 
 ### Session
 
-Sessions allow to uniquely identify requests to the `AutocompleteService` and pay a one-time fee, independent of the number of characters entered.
+Sessions allow to uniquely identify requests to the `AutocompleteService` and pay a one-time fee, regardless of the number of characters entered.
 
 **Price:**
 
@@ -273,7 +273,7 @@ Sessions allow to uniquely identify requests to the `AutocompleteService` and pa
 So, if you start typing "New York", these are the steps that will follow:
 
 1. `Widget Place Autocomplete` will create a `Session Token`,
-2. Typing "n", "ne", "new", "new ", "new y" … "new york" the `Widget` requires results with the same `session token` created precedently, for every chars.
+2. Typing "n", "ne", "new", "new ", "new y" … "new york" the `Widget` will use the same `session token` created precedently, for every chars.
 3. After the typing is completed and the user has selected one place from the `Widget`, a request is made to `getDetails` using the same `Session Token`, so you will not pay for each charter, but only for a single session.
 
 **NB:** _When using `AutocompleteService`, `Session tokens` must be manually implemented to group autocomplete requests._
@@ -297,7 +297,7 @@ autocompleteService.getPlacePredictions({
 - If you want to have an easy implementation with session token is preferable to use the `Widget`
 
 90% of the time it is preferable to use the `sessions` because they allow `grouping requests` by paying a single fee.
-There are other cases where only a few requests are sufficient, in these cases we could take **advantage** of (**Per Request**) method and pay less.
+There are other cases where only a few requests are sufficient, in these cases we could take **advantage** of **Per Request** method and pay less.
 
 For example, a simple entry of a zip code, can adopt two technique to save money:
 
@@ -332,7 +332,7 @@ This billing is used when any of these fields are requested:
 | --------------------- | --------------------------- |
 | 0.00$ per each (Free) | 0.00$ per each (Free)       |
 
-The information of the `Basic Field` are **included** in the cost of the request for **Places**, and do not involve any additional cost.
+Information of the `Basic Field` are **included** in the cost of the request for **Places**, and do not involve any additional cost.
 
 **2). Contact:**
 
@@ -358,7 +358,7 @@ More details here: [Google Billing](https://developers.google.com/places/web-ser
 Try to understand what information is needed for your application, then add filters
 
 _Example_: if you just want to know `formatted_address` and `geometry`, you can save `$0.008` by filtering the request.
-May seem derisory, but with a high volume of data in the order of `10,000 requests per day`, we'll have a monthly savings of `$2400`!
+It may seem derisory, but with a high volume of data in the order of `10,000 requests per day`, we'll save `$2400` per month!
 
 **Example PlaceDetails Request:**
 
@@ -390,9 +390,9 @@ var autocomplete = new google.maps.places.Autocomplete(
 
 ## 7. Optimize the UI
 
-**Dynamic maps** cost much more than **static maps**, as we have seen before with 200 dollars we will have **100,000** static maps while using dynamic maps, with 200 dollars we will have only **28,500** maps.
+**Dynamic maps** cost much more than **static maps**, as we have seen before with 200 dollars we will have **100,000** static maps whereas using dynamic maps with 200 dollars we will have only **28,500** maps.
 
-Switching from dynamic maps to static maps (where possible) we can have a **saving** of about 70%.
+Switching from dynamic maps to static maps (where possible) we can have a **savings** of about 70%.
 
 **Airbnb example:**
 ![airbnb](images/airbnb.png)
@@ -566,7 +566,7 @@ First, we need two preconditions:
 
 Analyzing the first point, the cost of the call `getPlaceDetails` that given an address gives the `PlaceId` is `0.017$` per session, much higher than the cost of a normal `Dynamic Map`, which is `0.007$`!.
 
-Analyzing instead the second point, we can take advantage of storing the `PlaceId`, paying only once time for the service `getPlaceDetails`, store the value of the `PlaceId` of an `Address` and use the `Embed Map` in a freeway.
+Analyzing instead the second point, we can take advantage of storing the `PlaceId`, paying only for the service `getPlaceDetails` (once time), store the value of the `PlaceId` of an `Address` and use the `Embed Map` in a freeway.
 
 ---
 
@@ -581,6 +581,6 @@ There isn't 12° tip, **write a comment** with your tips about Google Maps Servi
 ## Conclusion
 
 The services offered by Google, in **large scale** can be expensive, there are **alternatives** like MapBox, Maptiler, Here, etc.. but usually the accuracy and the details are not the same.
-This makes us reflect on the monopolization of a service that can enslave us, what would happen if Google made Google Analytics or Tag Manager paid, as it did 2 years ago for Google Maps?
+This makes us reflect on the monopolization of a service that can enslave us, What if Google started charging for Google Analytics or Tag Manager, as it did 2 years ago for Google Maps?
 
 In the next article, I'd like to talk about **MapBox**, **MapTiler** and **Open Street Map**, the advantages, and disadvantages of switching maps service.
