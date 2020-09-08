@@ -1,6 +1,6 @@
 ---
 date: 2020-09-06
-title: 'Pull images from docker hub with Terraform AWS + fix Too Many Requests (HAP429)'
+title: 'Pull private images from dockerhub with Terraform AWS + Fix Too Many Requests (HAP429)'
 template: post
 thumbnail: '../../thumbnails/terraform.png'
 slug: pull-private-docker-image-auth-terraform-aws
@@ -19,7 +19,7 @@ tags:
 There are two advantages of doing authentication on DockerHub:
 
 1) It allows you to create and pull **private** images
-2) Avoid `Too Many Requests (HAP429)` error message.
+2) Avoids `Too Many Requests (HAP429)` error message
 
 Point one is very clear, if we want to pull a private image from the docker hub we need to authenticate ourselves.
 The second point instead concerns all those errors due to the fact that Docker **restricts** the pull of public images based on [pricing](https://www.docker.com/pricing) tier.
@@ -46,7 +46,7 @@ The [AWS](https://aws.amazon.com/fr/blogs/devops/how-to-use-docker-images-from-a
 
 ![Secret Manager service](images/secret.png)
 
-- To configure the build environment of codebuild, in Environment, choose `Custom image` -> `Other Registry` and enter the ARN, of the credentials previously created with Secret Manager
+- To configure the build environment of codebuild, in Environment, choose `Custom image` -> `Other Registry` and enter the ARN of the credentials previously created with Secret Manager
 
 ![Secret Manager service](images/registrycodebuild.png)
 
@@ -75,7 +75,7 @@ variable "docker_hub_secret_arn" {
 }
 ```
 
-- Finally in the configuration of codebuild enviroment add the `registry_credential` field
+- Finally in the configuration of codebuild environment, add the `registry_credential` field
 
 ```json
 environment {
@@ -89,4 +89,4 @@ environment {
 }
 ```
 
-That's all, if you have problems comment below:
+That's all. If you have problems, comment down below:
