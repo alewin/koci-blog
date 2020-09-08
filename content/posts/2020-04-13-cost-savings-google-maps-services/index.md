@@ -4,6 +4,8 @@ title: 'Cost savings Google Maps Services'
 template: post
 thumbnail: '../../thumbnails/maps.png'
 slug: cost-savings-google-maps-services
+redirect_from:
+  - /cost-savings-google-maps-services/
 categories:
   - Tips
   - Map Services

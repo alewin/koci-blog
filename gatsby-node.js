@@ -1,8 +1,9 @@
 const path = require('path')
 const kebabCase = require('lodash.kebabcase')
 const moment = require('moment')
-const siteConfig = require('./data/SiteConfig')
 const sharp = require('sharp')
+const siteConfig = require('./data/SiteConfig')
+
 sharp.simd(false)
 sharp.cache(false)
 
@@ -76,6 +77,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
         slug = `/${node.frontmatter.slug}/`
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'template') && node.frontmatter.template === 'post')
+        slug = `/blog/${node.frontmatter.slug}/`
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = new Date(node.frontmatter.date)
 
