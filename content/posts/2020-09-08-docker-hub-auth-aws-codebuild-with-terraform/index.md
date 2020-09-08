@@ -1,6 +1,6 @@
 ---
-date: 2020-09-06
-title: 'Pull private images from dockerhub with Terraform AWS + Fix Too Many Requests (HAP429)'
+date: 2020-09-08
+title: 'Pull private images from DockerHub with Terraform AWS + Fix "Too Many Requests (HAP429)"'
 template: post
 thumbnail: '../../thumbnails/terraform.png'
 slug: pull-private-docker-image-auth-terraform-aws
