@@ -5,7 +5,7 @@ const config = {
   siteLogo: '/logos/logo-1024.png',
   siteUrl: 'http://alessiokoci.com',
   repo: 'https://github.com/alewin/koci-blog',
-  pathPrefix: '',
+  pathPrefix: 'blog',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
   siteDescription:'I’m Alssio Koci. I started writing blog post, to document and share some interesting ideas about web development.',
