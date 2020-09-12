@@ -29,13 +29,13 @@ The main thread has a **single call stack**, based on the LIFO principle (Last-i
 
 
 # How works Web Worker?
-Web worker has own EventLoop with their Call Stack and communicate with the main thread using a system of messages.
+Web worker (Web API) has **own** **EventLoop** with their **Call Stack** and communicate with the main thread using a **system of messages**.
 
 ### System of messages
 
-The pattern consists of two methods: `postMessage` and `onmessage`, these methods enables cross-origin communication between the main thread, pop-ups, iframes, or webWorkers:
+The pattern consists of two methods: `postMessage` and `onmessage`, these methods enables cross-origin communication between the main thread and webWorker:
 
-- `postMessage` allows send messages from __main thread__ to __worker__ and vice versa
+- `postMessage` allows send messages __from main thread to worker__ and vice versa
 
 **MainScript.js**
 ```javascript
@@ -47,7 +47,7 @@ worker.onmessage = function(e) {
 }
 ```
 
-- `onmessage` allows to recive a message from __worker__ to __main thread__ and vice versa
+- `onmessage` allows to recive a message __from worker tom ain thread__ and vice versa
 
 **Worker.js**
 ```javascript
@@ -59,7 +59,7 @@ onmessage = function(e) {
 
 ```
 
-Using this system message pattern, the main thread can delegate heavy tasks to a web worker.
+Using the system message pattern, the main thread can delegate heavy tasks to a web worker.
 
 ## React supports Web Worker?
 Yes and no... The official way to create a new react project is: [Creat React App](https://github.com/facebook/create-react-app),
