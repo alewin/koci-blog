@@ -13,7 +13,7 @@ export default class UserInfo extends Component {
             </div>
             <div>
               <p>
-                I’m Alssio Koci. I started writing this blog,
+                I’m Alessio Koci. I started writing this blog,
                 to document and share some interesting ideas about web development.
               </p>
               <span>The blog is completely free, but if you liked the article and would like to support me, you can offer me a coffee</span>

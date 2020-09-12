@@ -8,7 +8,7 @@ const config = {
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
-  siteDescription:'I’m Alssio Koci. I started writing blog post, to document and share some interesting ideas about web development.',
+  siteDescription:`Hi, I'm Alessio Koci, a Web developer from Bologna, where I graduated in Computer Science. At the moment I'm mainly working in the Javascript world, but I'm also interested in learning Backend, DevOps and Data engineering notions.`,
   siteRss: '/rss.xml',
   googleAnalyticsID: 'UA-156429325-1',
   postDefaultCategoryID: 'Tech',
