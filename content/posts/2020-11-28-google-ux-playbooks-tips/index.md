@@ -229,4 +229,13 @@ Urgency is a powerful motivator, if done well. There are 3 ways to create urgenc
 
 [__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
 
+### RESEARCH: Guest checkout
+
+Allow guest checkout 
+
+- **Original**: Only signup users
+- **Test**: Guest checkout ( **+30% checkout** )
+
+[__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
+
 ----
