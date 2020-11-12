@@ -59,3 +59,31 @@ The forms allow you to collect user data, try to make them clear, intuitive and 
 - **Don’t** use dropdowns for inputs with < 4 options, instead opt for buttons
 
 ![form ](images/form.jpg)
+
+
+----
+
+# Conversion Flow UX Tips
+
+conversion
+
+**DO:**
+
+- Display a value prop at every stage of the funnel (example If calls are important, prompt calling at every stage of the funnel ).
+- Use pagination to guide the user if more than 2 steps in conversion flow.
+- Use social proof for trust (Trust Pilot, Visa Badge, trust signals..).
+- Upsell during the conversion flow ( coupon, recommended products, etc..).
+- Support cross-device action by emailing or saving for later, or checkout as a guest.
+- Add value prop around why someone should create an account and Re-iterate value prop at conversion point.
+- Add urgency elements (4 users are viewing this item, Only 3 pieces available ).
+
+
+**DON'T**
+
+- **Don’t** use too many exit points during conversion ( reduce menu, remove links etc..).
+- **Don’t** Don’t redirect into checkout after adding to cart.
+
+
+![conversion ](images/conversion.jpg)
+
+----
