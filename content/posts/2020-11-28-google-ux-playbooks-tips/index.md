@@ -25,7 +25,7 @@ The homepage is the main page of the site and must be the entry point for all it
 - Ensure key **calls to action** appear at the top of **every page**.
 - Prioritize CTA via **color**, contrast, size with a **descriptive text**.
 - Organize menu by **macro-categories**.
-- Use a relevant text and **minimal** description providing **answers** to questions with a legible **font sizes**.
+- Use a relevant text and **minimal** description providing **answers** to questions with a legible **font sizes** (16px+).
 - **Encourage** users to view offers and content, showing previous searches, and **Pre-fill** current location, Add **urgency**.
 
 
@@ -76,14 +76,34 @@ conversion
 - Support cross-device action by emailing or saving for later, or checkout as a guest.
 - Add value prop around why someone should create an account and Re-iterate value prop at conversion point.
 - Add urgency elements (4 users are viewing this item, Only 3 pieces available ).
-
+- Have descriptive CTAs
 
 **DON'T**
 
 - **Don’t** use too many exit points during conversion ( reduce menu, remove links etc..).
-- **Don’t** Don’t redirect into checkout after adding to cart.
+- **Don’t** redirect into checkout after adding to cart.
 
 
 ![conversion ](images/conversion.jpg)
+
+----
+
+# Search UX Tips
+
+search
+
+**DO:**
+
+- Make search visible at all times
+- Use auto-suggestions, and implement spelling correction
+- Display number of search results
+- Include a Search History of latest property results
+
+**DON'T**
+
+- **Don’t** show an empty search result page ( propose content even if the search has no results)
+
+
+![search](images/search.jpg)
 
 ----
