@@ -13,17 +13,39 @@ tags:
   - UX
 ---
 
-Table of Contents
 
 
-- Part 1 - Generic Tips
-- Part 2 - Case of study
-  
-----
+> You can find the PDFs of the UX playbooks on this [link](https://github.com/alewin/google-ux-playbooks)
 
-## Part 1 - Generic Tips
+**Table of Contents**
 
-generic tips
+- [Intro](#part-1---intro)
+- [Part 1 - UX - Common Best Practices](#part-1---common-best-practices)
+- [Part 2 - UX Case studies](#part-2---ux-case-studies)
+
+---
+
+## Intro
+
+Last year I came across some "secret" Google documents regarding UX concepts. I took notes while reading these PDFs, and I chose to write an article about it, writing about the best practices (part 1) and real case studies described in the documents.
+
+There are 8 "UX Playbokos":
+
+- [🛍️ Retail](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/retail.pdf)
+- [💰 Finance](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/finance.pdf)
+- [🚘 Automobile](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/auto.pdf)
+- [✈️ Travel](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/travel.pdf)
+- [🏘️ Real Estate](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/realestate.pdf)
+- [💉Healthcare](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/healthcare.pdf)
+- [🧲 Lead Gen](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/leadgen.pdf)
+- [📰 News and content](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/news.pdf)
+
+I will not analyze them individually because they are well done with numerous explanatory images, but I will try to make a general summary.
+
+---
+
+## 1) UX Common Best Practices
+
 
 ### 1.1 Homepage UX Tips
 
@@ -33,7 +55,7 @@ The homepage is the main page of the site and must be the entry point for all it
 
 - Ensure key **calls to action** appear at the top of **every page**.
 - Prioritize CTA via **color**, contrast, size with a **descriptive text**.
-- Organize menu by **macro-categories**.
+- Organize the menu by **macro-categories**.
 - Use a relevant text and **minimal** description providing **answers** to questions with a legible **font sizes** (16px+).
 - **Encourage** users to view offers and content, showing previous searches, and **Pre-fill** current location, Add **urgency**.
 
@@ -43,6 +65,8 @@ The homepage is the main page of the site and must be the entry point for all it
 - **Don’t** use full page **interstitials** on homepage
 - **Don’t** use automatic **carousels** ( prefer User-initiated scrolling )
 - **Don’t** use long descriptions without a value for the user
+
+**Example:**
 
 ![Homepage](images/homepage.jpg)
 
@@ -66,6 +90,8 @@ The forms allow you to collect user data, try to make them clear, intuitive and 
 
 - **Don’t** use too many fields (remove optional fields, use full name instead of first/last, hide company and address line 2 by default, hide billing by default) 
 - **Don’t** use dropdowns for inputs with < 4 options, instead opt for buttons
+
+**Example:**
 
 ![form ](images/form.jpg)
 
@@ -92,6 +118,7 @@ conversion
 - **Don’t** use too many exit points during conversion ( reduce menu, remove links etc..).
 - **Don’t** redirect into checkout after adding to cart.
 
+**Example:**
 
 ![conversion ](images/conversion.jpg)
 
@@ -117,23 +144,27 @@ search
 
 ----
 
-# Part 2 - Case of study
+# Part 2 - UX Case Studies
 
 ### Research: Benefit oriented call-to-actions
 
-BettingExpert.com tweaked the form copy:
+BettingExpert.com changing a CTA copy, increased by 33% the number of subscribed users
 
-- **Original**: Sign Up
-- **Test**: Sign Up & Get the Best Daily Tips (**+33% of membership sign-ups** )
+- **Original**: CTA with  `Sign Up ` copy
+- **Test**:  CTA copy `Sign Up & Get the Best Daily Tips ` (**+33% of membership sign-ups** )
+
+![bettingexpert](images/bettingexpert.jpg)
 
 [__source__](http://contentverve.com/case-study-31-03-increase-in-sales-by-tweaking-the-call-to-action-copy-on-a-payment-page/)
 
 ### RESEARCH: Carousels rarely work
 
-nd.edue tested that carousels can be perceived as banners and therefore will be ignored. The user should always be in control.
+nd.edu tested that carousels can be perceived as banners and therefore will be ignored. The user should always be in control.
 
 - **Original**: Carousel (click-rate of the first element of the carousel was 90%)
 - **Test**: Without carousel ( **uniform click rate** )
+
+![carousel](images/carousel.jpg)
 
 [__source__](https://cxl.com/blog/dont-use-automatic-image-sliders-or-carousels/)
 
@@ -142,6 +173,8 @@ nd.edue tested that carousels can be perceived as banners and therefore will be 
 
 79% of people don’t read, they just skim The main thing they DO read is the headline
 Keep the focus on value propositions
+
+![readscan](images/readscan.jpg)
 
 [__source__](https://cxl.com/blog/how-to-increase-sales-online-the-checklist/)
 
@@ -154,6 +187,8 @@ demonstrate the products
 - **Original**: static image
 - **Test**: Video ( **+6%-30% sales impact** )
 
+![onetapsignup](images/onetapsignup.jpg)
+
 [__source__](https://cxl.com/blog/optimize-videos/)
 
 
@@ -164,13 +199,10 @@ demonstrate the products
 - **Original**: email signup
 - **Test**: Google one-tap signup ( **2-4x higher sign-up rates** )
 
+![video](images/video.jpg)
+
 [__source__](https://cxl.com/blog/social-login/)
 
-### RESEARCH: Checkout
-
-Checkout is the last opportunity a retailer has to make a positive impression on a shopper. Show a security badge, can encrease payment
-
-[__source__](https://baymard.com/blog/perceived-security-of-payment-form)
 
 ### RESEARCH: Page speed
 
@@ -178,6 +210,8 @@ Leverage streamlined code and Google caching technology to create pages with lig
 
 - **Original**: normal pages
 - **Test**: AMP pages ( **3-4x Faster load times**  + **30% Higher click-through to national websites** + **26% More mobile users**)
+
+![amp](images/amp.jpg)
 
 [__source__](https://amp.dev/success-stories/bmw-com/?referrer=ampproject.org)
 
@@ -188,6 +222,8 @@ Users look first towards the upper-right corner for search. If they don’t find
 - **Original**: Nothing
 - **Test**: Search on top of the page
 
+![search](images/search.jpg)
+
 [__source__](https://www.uxbooth.com/articles/best-practices-for-search/)
 
 ### RESEARCH: Search Results page
@@ -197,17 +233,20 @@ Always return results
 - **Original**: Empty results page
 - **Test**: Algorithm that returned product results without an exact match ( **Increased page views 15%**)
 
+![search](images/searchresult.jpg)
 
 [__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
 
 
 ### RESEARCH: Form fields
 
-In a recent study done on finance websites we found that mobile sites that require consumers to fill in 0-10 fields to complete an application had a 72% higher conversion rate than the average Finance mobile site (on average, Finance mobile sites require consumers to fill in 26 fields to convert).
+Best performing e-commerce sites have 6-8 fields, total of 12 form elements
+
 
 - **Original**: +10 form fields
 - **Test**:  0-10 form fields to complete an application ( **72% higher conversion rate** )
 
+![formfields](images/formfields.jpg)
 
 ### RESEARCH: Social Proof
 
@@ -216,6 +255,8 @@ According to a Nielsen report 70% of consumers trust consumer opinions online 63
 
 - **Original**: Nothing
 - **Test**: Testimonials, Number of people using your services/products, User or independent ratings
+
+![socialproof](images/socialproof.jpg)
 
 [__source__](https://www.nngroup.com/articles/social-proof-ux/)
 
@@ -227,6 +268,8 @@ Urgency is a powerful motivator, if done well. There are 3 ways to create urgenc
 - **Original**: Nothing
 - **Test**:  Quantity limitations ( **17% increase in CVR** )
 
+![urgency](images/urgency.jpg)
+
 [__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
 
 ### RESEARCH: Guest checkout
@@ -236,6 +279,7 @@ Allow guest checkout
 - **Original**: Only signup users
 - **Test**: Guest checkout ( **+30% checkout** )
 
+![checkout](images/checkout.jpg)
 [__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
 
 ----
