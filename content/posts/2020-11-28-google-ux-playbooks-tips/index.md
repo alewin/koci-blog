@@ -13,8 +13,6 @@ tags:
   - UX
 ---
 
-
-
 > You can find the PDFs of the UX playbooks on this [link](https://github.com/alewin/google-ux-playbooks)
 
 **Table of Contents**
@@ -40,16 +38,15 @@ There are 8 "UX Playbokos":
 - [🧲 Lead Gen](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/leadgen.pdf)
 - [📰 News and content](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/news.pdf)
 
-I will not analyze them individually because they are well done with numerous explanatory images, but I will try to make a general summary.
+I will not analyze them individually because they are well done with numerous explanatory slides, but I will try to make a general summary.
 
 ---
 
 ## 1) UX Common Best Practices
 
-
 ### 1.1 Homepage UX Tips
 
-The homepage is the main page of the site and must be the entry point for all its features.
+The homepage is the main page of the site and must be the entry point for all its features, Highlight the main CTA of your site, and leave secondary information in a menu
 
 **DO:**
 
@@ -95,7 +92,6 @@ The forms allow you to collect user data, try to make them clear, intuitive and 
 
 ![form ](images/form.jpg)
 
-
 ----
 
 ### 1.3 Conversion Flow UX Tips
@@ -130,10 +126,10 @@ search
 
 **DO:**
 
-- Make search visible at all times
-- Use auto-suggestions, and implement spelling correction
-- Display number of search results
-- Include a Search History of latest property results
+- Make search visible at all times.
+- Use auto-suggestions, and implement spelling correction.
+- Display number of search results.
+- Include a Search History of latest property results.
 
 **DON'T**
 
@@ -171,8 +167,7 @@ nd.edu tested that carousels can be perceived as banners and therefore will be i
 
 ### RESEARCH: People don’t read they skim
 
-79% of people don’t read, they just skim The main thing they DO read is the headline
-Keep the focus on value propositions
+79% of people don’t read, they just skim The main thing they DO read is the headline. Keep the focus on value propositions
 
 ![readscan](images/readscan.jpg)
 
@@ -186,8 +181,8 @@ demonstrate the products
 
 - **Original**: static image
 - **Test**: Video ( **+6%-30% sales impact** )
-
-![onetapsignup](images/onetapsignup.jpg)
+- 
+![video](images/video.jpg)
 
 [__source__](https://cxl.com/blog/optimize-videos/)
 
@@ -199,14 +194,14 @@ demonstrate the products
 - **Original**: email signup
 - **Test**: Google one-tap signup ( **2-4x higher sign-up rates** )
 
-![video](images/video.jpg)
+![onetapsignup](images/onetapsignup.jpg)
 
 [__source__](https://cxl.com/blog/social-login/)
 
 
 ### RESEARCH: Page speed
 
-Leverage streamlined code and Google caching technology to create pages with lightning fast load times.
+The loading page speed is one of the most important elements for the user. Through the Google AMP technoloy it is possible to drastically reduce the loading time of a web page
 
 - **Original**: normal pages
 - **Test**: AMP pages ( **3-4x Faster load times**  + **30% Higher click-through to national websites** + **26% More mobile users**)
