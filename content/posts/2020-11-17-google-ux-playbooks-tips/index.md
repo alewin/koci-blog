@@ -1,5 +1,5 @@
 ---
-date: 2020-11-28
+date: 2020-11-17
 title: 'Google UX Playbooks tips'
 template: post
 thumbnail: '../../thumbnails/ux.png'
