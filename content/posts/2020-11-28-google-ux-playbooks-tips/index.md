@@ -115,7 +115,7 @@ Induce potential users to continue to progress through the various stages of the
 
 **Example:**
 
-![conversion ](images/conve)
+![conversion ](images/conversion.jpg)
 
 ----
 
