@@ -25,7 +25,7 @@ tags:
 
 ## Intro
 
-Last year I came across some "secret" Google documents regarding UX concepts. I took notes while reading these PDFs, and I chose to write an article about it, writing about the best practices (part 1) and real case studies described in the documents.
+Last year I came across some "secret" Google documents about UX concepts. I took notes while reading these PDFs, and wrote an article about them, writing about best practices (part 1) and real case studies described in the documents.
 
 There are 8 "UX Playbokos":
 
@@ -38,7 +38,7 @@ There are 8 "UX Playbokos":
 - [🧲 Lead Gen](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/leadgen.pdf)
 - [📰 News and content](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/news.pdf)
 
-I will not analyze them individually because they are well done with numerous explanatory slides, but I will try to make a general summary.
+I will not analyze them individually since they are well done with numerous explanatory slides, but I will try to make a general summary.
 
 ---
 
@@ -46,7 +46,7 @@ I will not analyze them individually because they are well done with numerous ex
 
 ### 1.1 Homepage UX Tips
 
-The homepage is the main page of the site and must be the entry point for all its features, Highlight the main CTA of your site, and leave secondary information in a menu
+The homepage is the main page of the site and must be the entry point for all its features, Highlight the main CTA of your site, and leave secondary information in a menu.
 
 **DO:**
 
@@ -72,7 +72,7 @@ The homepage is the main page of the site and must be the entry point for all it
 
 ### 1.2 Form UX Tips
 
-The forms allow you to collect user data, try to make them clear, intuitive and simple to fill in
+The forms allow you to collect user data, try to make them clear, intuitive and simple to fill in.
 
 **DO:**
 
@@ -96,7 +96,7 @@ The forms allow you to collect user data, try to make them clear, intuitive and 
 
 ### 1.3 Conversion Flow UX Tips
 
-conversion
+Induce potential users to continue to progress through the various stages of the conversion funnel, reducing churning at each stage of the funnel and increasing your product's value for your customer.
 
 **DO:**
 
@@ -105,7 +105,6 @@ conversion
 - Use social proof for trust (Trust Pilot, Visa Badge, trust signals..).
 - Upsell during the conversion flow ( coupon, recommended products, etc..).
 - Support cross-device action by emailing or saving for later, or checkout as a guest.
-- Add value prop around why someone should create an account and Re-iterate value prop at conversion point.
 - Add urgency elements (4 users are viewing this item, Only 3 pieces available ).
 - Have descriptive CTAs
 
@@ -116,13 +115,13 @@ conversion
 
 **Example:**
 
-![conversion ](images/conversion.jpg)
+![conversion ](images/conve)
 
 ----
 
 ### 1.4 Search UX Tips
 
-search
+“Search is a defining element of the user experience… Unfortunately, it’s also the source of endless frustration. Search is the worst usability problem on the Web.” [cit. Peter Moville and Jeffrey Callendar]
 
 **DO:**
 
