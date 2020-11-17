@@ -21,7 +21,7 @@ tags:
 
 - [Intro](#intro)
 
-- [Part 1 - UX - Common Best Practices](#1-ux-common-best-practices)
+- [1) UX - Common Best Practices](#1-ux-common-best-practices)
   - [1.1 Homepage](#11-homepage-ux-tips)
   - [1.2 Form](#12-form-ux-tips)
   - [1.4 Conversion Flow](#14-conversion-ux-tips)
