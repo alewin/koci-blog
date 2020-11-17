@@ -20,8 +20,28 @@ tags:
 **Table of Contents**
 
 - [Intro](#intro)
+
 - [Part 1 - UX - Common Best Practices](#1-ux-common-best-practices)
-- [Part 2 - UX Case studies](#2-ux-case-studies)
+  - [1.1 Homepage](#11-homepage-ux-tips)
+  - [1.2 Form](#12-form-ux-tips)
+  - [1.4 Conversion Flow](#14-conversion-ux-tips)
+  - [1.5 Search](#15-search-ux-tips)
+
+- [2) UX Case Studies](#2-ux-case-studies)
+    - [Benefit oriented call-to-actions](#benefit-oriented-call-to-actions)
+    - [Carousels rarely work](#carousels-rarely-work)
+    - [People don’t read they skim](#people-dont-read-they-skim)
+    - [Video can be a strong driver of conversions](#video-can-be-a-strong-driver-of-conversions)
+    - [One-Tap sign up](#one-tap-sign-up)
+    - [Page speed](#page-speed)
+    - [Search Position](#search-position)
+    - [Search Results page](#search-results-page)
+    - [Form fields](#form-fields)
+    - [Social Proof](#social-proof)
+    - [Urgency elements](#urgency-elements)
+    - [Guest checkout](#guest-checkout)
+
+
 
 ---
 
@@ -142,7 +162,7 @@ Induce potential users to continue to progress through the various stages of the
 
 # 2) UX Case Studies
 
-### Research: Benefit oriented call-to-actions
+### Benefit oriented call-to-actions
 
 BettingExpert.com has increased the number of registered users by 33% by changing the text of a CTA.
 
@@ -154,7 +174,7 @@ BettingExpert.com has increased the number of registered users by 33% by changin
 
 [__source__](http://contentverve.com/case-study-31-03-increase-in-sales-by-tweaking-the-call-to-action-copy-on-a-payment-page/)
 
-### RESEARCH: Carousels rarely work
+### Carousels rarely work
 
 nd.edu tested that carousels can be perceived as banners and therefore will be ignored. The user should always be in control.
 
@@ -166,7 +186,7 @@ nd.edu tested that carousels can be perceived as banners and therefore will be i
 [__source__](https://cxl.com/blog/dont-use-automatic-image-sliders-or-carousels/)
 
 
-### RESEARCH: People don’t read they skim
+### People don’t read they skim
 
 79% of people don’t read, they just skim The main thing they DO read is the headline. Keep the focus on value propositions.
 
@@ -175,7 +195,7 @@ nd.edu tested that carousels can be perceived as banners and therefore will be i
 [__source__](https://cxl.com/blog/how-to-increase-sales-online-the-checklist/)
 
 
-### RESEARCH: Video can be a strong driver of conversions
+### Video can be a strong driver of conversions
 
 You can present a ton of information with just a 30s video – equivalent of half a page of text.
 Zappos, for example, uses video to describe its products.
@@ -188,7 +208,7 @@ Zappos, for example, uses video to describe its products.
 [__source__](https://cxl.com/blog/optimize-videos/)
 
 
-### RESEARCH: One-Tap sign up
+### One-Tap sign up
 
 92% of users give up if they don’t remember a username or password.
 
@@ -200,7 +220,7 @@ Zappos, for example, uses video to describe its products.
 [__source__](https://cxl.com/blog/social-login/)
 
 
-### RESEARCH: Page speed
+### Page speed
 
 The page speed is one of the most important elements for the user. Through Google's AMP technology you can drastically reduce the loading time of a web page
 
@@ -211,7 +231,7 @@ The page speed is one of the most important elements for the user. Through Googl
 
 [__source__](https://amp.dev/success-stories/bmw-com/?referrer=ampproject.org)
 
-### RESEARCH: Search Position
+### Search Position
 
 Users look first towards the upper-right corner for search. If they don’t find the search box there, they start scanning the top of the page (F-shaped pattern).
 
@@ -222,7 +242,7 @@ Users look first towards the upper-right corner for search. If they don’t find
 
 [__source__](https://www.uxbooth.com/articles/best-practices-for-search/)
 
-### RESEARCH: Search Results page
+### Search Results page
 
 Always return results to prevent the user from leaving the site.
 
@@ -234,7 +254,7 @@ Always return results to prevent the user from leaving the site.
 [__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
 
 
-### RESEARCH: Form fields
+### Form fields
 
 Best performing e-commerce sites have 6-8 fields, a total of 12 form elements
 
@@ -243,7 +263,7 @@ Best performing e-commerce sites have 6-8 fields, a total of 12 form elements
 
 ![formfields](images/formfields.jpg)
 
-### RESEARCH: Social Proof
+### Social Proof
 
 According to a Nielsen report, **70%** of consumers trust consumer opinions online and **63%** of consumers say they are more likely to buy from a website that displays reviews.
 
@@ -255,7 +275,7 @@ According to a Nielsen report, **70%** of consumers trust consumer opinions onli
 [__source__](https://www.nngroup.com/articles/social-proof-ux/)
 
 
-### RESEARCH: Urgency elements
+### Urgency elements
 
 Urgency is a powerful motivator if done well. There are 3 ways to create urgency: **quantity limitations** (Only 3 tickets left at this price), **time limitations** (Discounted tickets until July 1st), **contextual limitations** (Father’s Day is coming, get a gift now)
 
@@ -266,7 +286,7 @@ Urgency is a powerful motivator if done well. There are 3 ways to create urgency
 
 [__source__](https://docs.google.com/presentation/d/17gowFcsjZplxasgOs6NJztM5Ny-7nGrvfAXAG15hLLk/edit#slide=id.g101c97cb7e_0_17)
 
-### RESEARCH: Guest checkout
+### Guest checkout
 
 According to a study by Baymard Institute, 37% of consumers would abandon checkout if they thought the site required account creation.
 
