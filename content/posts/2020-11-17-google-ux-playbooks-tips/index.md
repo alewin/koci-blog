@@ -49,7 +49,7 @@ tags:
 
 Last year I came across some "secret" Google documents about UX concepts. I took notes while reading these PDFs, and wrote an article about them.
 
-There are 8 "UX Playbokos":
+There are 8 "UX Playbooks":
 
 - [🛍️ Retail](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/retail.pdf)
 - [💰 Finance](https://github.com/alewin/google-ux-playbooks/blob/main/playbooks/finance.pdf)
