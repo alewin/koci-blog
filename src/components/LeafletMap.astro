@@ -1,0 +1,73 @@
+---
+export interface Props {
+  latitude: number;
+  longitude: number;
+  zoom: number;
+  points: { lat: number; lng: number; description: string }[];
+  /** the DOM ID of a <div> element */
+  container: string;
+  /** https://leafletjs.com/reference.html#tilelayer */
+  tileLayer: string;
+  /** Most tile servers require attribution. */
+  attribution: string;
+  containerstyle?: string;
+}
+
+const {
+  latitude,
+  longitude,
+  zoom,
+  points = [],
+  container,
+  tileLayer,
+  attribution,
+  containerstyle,
+} = Astro.props;
+---
+
+<leaflet-map
+  data-latitude={latitude}
+  data-longitude={longitude}
+  data-zoom={zoom}
+  data-container={container}
+  data-tiles={tileLayer}
+  data-attribution={attribution}
+  data-containerstyle={containerstyle}
+  data-points={JSON.stringify(points)}
+>
+  <div id={container} style={containerstyle}></div>
+  <script>
+    import "leaflet/dist/leaflet";
+    import "leaflet/dist/leaflet.css";
+
+    class LeafletMap extends HTMLElement {
+      constructor() {
+        super();
+
+        const latlng = [
+          Number(this.dataset.latitude),
+          Number(this.dataset.longitude),
+        ];
+
+        // @ts-expect-error fix ts error
+        var map = L.map(this.dataset.container).setView(
+          latlng,
+          Number(this.dataset.zoom),
+        );
+
+        // @ts-expect-error fix ts error
+        L.tileLayer(this.dataset.tiles, {
+          attribution: this.dataset.attribution,
+        }).addTo(map);
+
+        const points = this.dataset.points ? JSON.parse(this.dataset.points) : [];
+        // @ts-expect-error fix ts error
+        points.forEach((p) => L.marker(p).addTo(map).bindPopup(p.description));
+      
+
+      }
+    }
+
+    window.customElements.define("leaflet-map", LeafletMap);
+  </script></leaflet-map
+>
