@@ -9,7 +9,7 @@ type Props = {
 const { entry } = Astro.props as {
   entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
 };
-const images = import.meta.glob<{ default: ImageMetadata }>('public/thumbnails/*.{jpeg,jpg,png,gif}')
+const images = import.meta.glob<{ default: ImageMetadata }>('/public/thumbnails/*.{jpeg,jpg,png,gif}');
 ---
 
 <a
