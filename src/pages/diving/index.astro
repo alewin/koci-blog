@@ -1,0 +1,35 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import LeafletMap from "@components/LeafletMap.astro";
+import Callout from "@components/Callout.astro";
+import { getScubaLogbook } from "@lib/notion";
+
+
+const points = (await getScubaLogbook());
+---
+<Layout description="Diving" title="Diving">
+    <Container>
+        <h1 class="animate font-semibold text-black dark:text-white text-3xl mb-8">Scuba Diving</h1>
+
+        <h1 class="text-xl">My Dive Sites</h1>
+
+        <div class="w-full mt-8">
+            <LeafletMap
+                container="leafletmap"
+                latitude={40}
+                longitude={18}
+                zoom={3}
+                points={points}
+                tileLayer="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution="© <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+                containerstyle="width: 100%; height: 500px; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);"
+            />
+        </div>
+
+        <h2 class="text-2xl mt-8">Diving notes / Summaries / Quiz</h2>
+       
+        <Callout type="warning">No diving notes yet. Stay tuned!</Callout>
+
+    </Container>
+</Layout>
