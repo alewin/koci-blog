@@ -4,11 +4,12 @@ import Container from "@components/Container.astro";
 import LeafletMap from "@components/LeafletMap.astro";
 import Callout from "@components/Callout.astro";
 import { getScubaLogbook } from "@lib/notion";
+import { DIVING } from "@consts";
 
+const points = await getScubaLogbook();
 
-const points = (await getScubaLogbook());
 ---
-<Layout description="Diving" title="Diving">
+<Layout title={DIVING.TITLE} description={DIVING.DESCRIPTION}>
     <Container>
         <h1 class="animate font-semibold text-black dark:text-white text-3xl mb-8">Scuba Diving</h1>
 

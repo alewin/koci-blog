@@ -1,11 +1,11 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
-import { SITE } from "@consts";
+import { RESUME } from "@consts";
 import Link from "@components/Link.astro";
 ---
 
-<Layout title="404" description={SITE.DESCRIPTION}>
+<Layout title={RESUME.TITLE} description={RESUME.DESCRIPTION}>
   <Container>
     <div class="mt-16 grid place-items-center gap-3">
       <h2 class="animate text-2xl font-semibold text-black dark:text-white">
@@ -20,7 +20,7 @@ import Link from "@components/Link.astro";
           
             <ul class="flex flex-col gap-4 my-4">
 
-                <li>•  <span class="text-black dark:text-white text-xs pr-4">Aug 2024 - present. </span> <Link external href="https://www.nearform.com/"><span class="font-semibold">NearForm</span> </Link> - Senior Software Engineer</li>
+                <li>•  <span class="text-black dark:text-white text-xs pr-4">Aug 2024 - present  </span> <Link external href="https://www.nearform.com/"><span class="font-semibold">NearForm</span> </Link> - Senior Software Engineer</li>
                 <li>•  <span class="text-black dark:text-white text-xs pr-4">Nov 2010 - Jul 2024 </span> <Link external href="https://www.telepass.com/"> <span class="font-semibold">Telepass</span> </Link> -  Software Engineer</li>
                 <li>•  <span class="text-black dark:text-white text-xs pr-4">Nov 2018 - Nov 2020 </span> <Link external href="https://www.shopfully.com/"> <span class="font-semibold">ShopFully</span> </Link> - Frontend Developer</li>
                 <li>•  <span class="text-black dark:text-white text-xs pr-4">Mar 2018 - Nov 2018 </span> <Link external href="https://www.ey.com/"> <span class="font-semibold">Ey</span> </Link> - FullStack Developer</li>

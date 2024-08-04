@@ -60,11 +60,19 @@ const {
           attribution: this.dataset.attribution,
         }).addTo(map);
 
-        const points = this.dataset.points ? JSON.parse(this.dataset.points) : [];
         // @ts-expect-error fix ts error
-        points.forEach((p) => L.marker(p).addTo(map).bindPopup(p.description));
-      
 
+        var scubaIcon = L.icon({
+          iconUrl: "/thumbnails/scuba.png",
+          iconSize: [32, 32], // size of the icon
+        
+        });
+
+        const points = this.dataset.points
+          ? JSON.parse(this.dataset.points)
+          : [];
+        // @ts-expect-error fix ts error
+        points.forEach((p) => L.marker(p, { icon: scubaIcon }).addTo(map, ).bindPopup(p.description));
       }
     }
 
